@@ -145,6 +145,7 @@
       const formData = utils.serializeFormToObject(thisProduct.dom.form);
       // set price to default price	
       let price = thisProduct.data.price;
+
       // for every category (param)...	
       for (let paramId in thisProduct.data.params) {
         // determine param value, e.g. paramId = 'toppings', param = { label: 'Toppings', type: 'checkboxes'... }	
@@ -173,9 +174,9 @@
           }
         }
       }
-      // update calculated price in the HTML+	
+      // update calculated price in the HTML
+      thisProduct.priceSingle = price / thisProduct.amountWidget.value;
       price *= thisProduct.amountWidget.value;
-      thisProduct.priceSingle = price;
       thisProduct.dom.priceElem.innerHTML = price;
     }
     initAmountWidget() {
@@ -371,6 +372,7 @@
     }
     initAmountWidget() {
       const thisCartProduct = this;
+      console.log(thisCartProduct.priceSingle);
       thisCartProduct.amountWidget = new AmountWidget(thisCartProduct.dom.amountWidget);
       thisCartProduct.dom.amountWidget.addEventListener('updated', function () {
         thisCartProduct.amount = thisCartProduct.amountWidget.value;
