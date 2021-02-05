@@ -61,7 +61,6 @@ class Cart {
     thisCart.subtotalPrice = 0;
     for (let product of thisCart.products) {
       thisCart.totalNumber = thisCart.totalNumber + product.amount;
-      console.log(thisCart.products);
       thisCart.subtotalPrice = thisCart.subtotalPrice + product.price;
     }
     if (thisCart.totalNumber !== 0) {
