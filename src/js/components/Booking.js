@@ -15,6 +15,7 @@ class Booking {
     thisBooking.render(bookingWrapper);
     thisBooking.initWidgets();
     thisBooking.getData();
+
   }
 
   getData() {
@@ -167,7 +168,6 @@ class Booking {
         table.classList.remove(classNames.booking.tableBooked);
       }
     }
-
   }
 
   render(bookingWrapper) {

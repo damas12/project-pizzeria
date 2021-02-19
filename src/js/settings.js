@@ -72,6 +72,7 @@ export const select = {
   },
   nav: {
     links: '.main-nav a',
+    links2: '.home-wrapper a',
   },
 };
 
